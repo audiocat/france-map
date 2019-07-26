@@ -10,7 +10,7 @@
     "#FF7A7A"
   ];
 
-  var cities=[{id:"新北",lv:0,},{id:"台北",lv:0,},{id:"基隆",lv:0,},{id:"桃園",lv:0,},{id:"新竹",lv:0,},{id:"苗栗",lv:0,},{id:"台中",lv:0,},{id:"彰化",lv:0,},{id:"雲林",lv:0,},{id:"嘉義",lv:0,},{id:"南投",lv:0,},{id:"台南",lv:0,},{id:"高雄",lv:0,},{id:"屏東",lv:0,},{id:"台東",lv:0,},{id:"花蓮",lv:0,},{id:"宜蘭",lv:0,},{id:"馬祖",lv:0,},{id:"金門",lv:0,},{id:"澎湖",lv:0,}];
+  var cities=[{id:"大东部",lv:0,},{id:"中央-卢瓦尔河谷",lv:0,},{id:"科西嘉",lv:0,},{id:"新阿基坦",lv:0,},{id:"勃艮第-弗朗什-孔泰",lv:0,},{id:"布列塔尼",lv:0,},{id:"上法兰西",lv:0,},{id:"法兰西岛",lv:0,},{id:"诺曼底",lv:0,},{id:"奥克西塔尼",lv:0,},{id:"卢瓦尔河地区",lv:0,},{id:"普罗旺斯-阿尔卑斯-蓝色海岸",lv:0,},{id:"瓜德罗普",lv:0,},{id:"马提尼克",lv:0,},{id:"奥弗涅-罗讷-阿尔卑斯",lv:0}];
 
   var contextMenu = document.querySelector("#contextMenu");
   var menuTitle = document.querySelector('#menuTitle');
@@ -21,6 +21,7 @@
   var cityTexts = [].map.call(document.querySelectorAll('text.city'), function (ele) { return ele; });
   cityTexts.map(function (cityText) {
     cityText.style.cursor = 'pointer';
+    cityText.style.fontSize = 8;
     cityText.addEventListener('click', bindContextMenu);
   });
 
@@ -68,8 +69,8 @@
     var ctx = canvas.getContext("2d");
     canvas.width = 750;
     canvas.height = 1124;
-    canvg(canvas, svgString);
-    canvas.toBlob(function (blob) { saveAs(blob, 'taiwan.png'); });
+    canvg(canvas, svgString, {ignoreClear: true});
+    canvas.toBlob(function (blob) { saveAs(blob, 'france.png'); });
   });
 
   function bindContextMenu (e) {
